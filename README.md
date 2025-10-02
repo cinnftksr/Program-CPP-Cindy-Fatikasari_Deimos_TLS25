@@ -1,34 +1,34 @@
 # Program-CPP-Cindy-Fatikasari_Deimos_TLS25
 **2. Lost and Found**
 
-#include <iostream>
-using namespace std;
+    #include <iostream>
+    using namespace std;
 
-// hitung panjang string 
-int panjang(string s) {
+    // hitung panjang string 
+    int panjang(string s) {
     int n = 0;
     while (s[n] != '\0') n++;
     return n;
-}
+    }
 
-// membalik string 
-string balik(string s) {
+    // membalik string 
+    string balik(string s) {
     int n = panjang(s);
     string hasil = "";
     for (int i = n - 1; i >= 0; i--) {
         hasil += s[i];
     }
     return hasil;
-}
+    }
 
-// cek huruf vokal 
-bool vokal(char c) {
+    // cek huruf vokal 
+    bool vokal(char c) {
     return (c=='a' || c=='i' || c=='u' || c=='e' || c=='o' ||
             c=='A' || c=='I' || c=='U' || c=='E' || c=='O');
-}
+    }
 
-// membuat sandi dari kata
-string buatSandi(string kata) {
+    // membuat sandi dari kata
+    string buatSandi(string kata) {
     // buang huruf vokal
     string konsonan = "";
     for (int i = 0; kata[i] != '\0'; i++) {
@@ -51,10 +51,10 @@ string buatSandi(string kata) {
     }
     if (n == 0) hasil += to_string(ascii);
     return hasil;
-}
+    }
 
-// membuat kata dari sandi
-string buatKata(string sandi) {
+    // membuat kata dari sandi
+    string buatKata(string sandi) {
     string angka = "", huruf = "";
     for (int i = 0; sandi[i] != '\0'; i++) {
         if (sandi[i] >= '0' && sandi[i] <= '9') angka += sandi[i];
@@ -74,9 +74,9 @@ string buatKata(string sandi) {
     // agar tidak terjadi huruf pertama berjumlah ganda
     if (panjang(rev) > 0 && rev[0] == first) return rev;
     else return rev;
-}
+    }
 
-int main() {
+    int main() {
     while (true) {
         cout << "1. Buat sandi\n";
         cout << "2. Buat kata dari sandi\n";
@@ -102,14 +102,14 @@ int main() {
             cout << "Pilihan salah!\n";
         }
     }
-}
+    }
 
 **3. Strange Traffic Lights**
 
-#include <iostream>
-using namespace std;
+    #include <iostream>
+    using namespace std;
 
-string warnaLampu(int detik) {
+    string warnaLampu(int detik) {
     // urutan warna lampu: kuning -> merah -> hijau
     int durasi[3] = {3, 80, 20};
     string warna[3] = {"Kuning", "Merah", "Hijau"};
@@ -127,9 +127,9 @@ string warnaLampu(int detik) {
     }
 
     return warna[idx];
-}
+    }
 
-int main() {
+    int main() {
     int detik[] = {80, 135, 150, 212};
     for (int t : detik) {
         cout << "Pada detik ke-" << t << " lampu berwarna " << warnaLampu(t) << endl;
